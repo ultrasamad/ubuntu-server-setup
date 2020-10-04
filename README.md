@@ -5,16 +5,16 @@ We wil go over the initial server setup, install nginx, PHP, PostgreSQL, PostGIS
 This guide is tested on Ubuntu server v18
 
 ## Table of contents
-- [Autentication & Users](#authentication-&-users)
+- [Autentication and Users](#authentication-and-users)
 - [Configure firewall rules](#configure-firewall-rules)
 - [Install Nginx](#install-nginx)
 - [Setup Nginx server blocks](#setup-nginx-server-blocks)
 - [SSL Certificates with Letsencrypt](#ssl-certificates-with-letsencrypt)
 - [Install Composer](#install-composer)
 - [Install PHP](#install-php)
-- [Install & Configure PostgreSQL](#install-&-configure-postgresql)
+- [Install and Configure PostgreSQL](#install-and-configure-postgresql)
 - [Allow remote access to PostgreSQL](#allow-remote-access-to-postgresql)
-- [Install & enable PostGIS](#install-&-enable-postgis)
+- [Install and enable PostGIS](#install-and-enable-postgis)
 - [Install MySQL](#install-mysql)
 - [Allow remote access to MySQL](#allow-remote-access-to-mysql)
 - [Install Redis](#install-redis)
@@ -22,7 +22,7 @@ This guide is tested on Ubuntu server v18
 - [Useful links](#useful-links)
 ***
 
-## Authentication & Users
+## Authentication and Users
 This section shows how to connect to a server for the first time.
 Before logging onto the server, generate **ssh** keys on your local machine if yo haven't already.
 
@@ -89,7 +89,7 @@ Add `fastcgi_pass unix:/run/php/php7.4-fpm.sock;` to the location server block i
 - Reload Nginx: `$ sudo service nginx reload`
 - Restart *php7.4-fpm*: `$ sudo service php7.4-fpm restart`
 
-## Install & Configure PostgreSQL
+## Install and Configure PostgreSQL
 - Remove any old installation: `$ sudo apt remove postgresql && sudo apt-get --purge remove postgresql\*`
 - Reboot server: `$ sudo reboot`
 - Create the repository configuration file:\
@@ -117,7 +117,7 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
  - Add allowed IP entry to */etc/postgresql/12/main/pg_hba.conf*: `host all all 0.0.0.0/0 md5`
  - Restart PostgreSQL: `$ sudo service postgresql restart`
 
- ## Install & enable PostGIS
+ ## Install and enable PostGIS
  - Install: `$ sudo apt install postgis postgresql-12-postgis-3`
  - Enable PostGIS on current database: `# CREATE EXTENSION postgis;`
  - Verify PostGIS installation: `# SELECT Postgis_Version();` 
