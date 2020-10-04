@@ -154,6 +154,11 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
 
 
 ## Install Redis
+- Update repository packages list: `$ sudo apt update`
+- Install redis server: `$ sudo apt install redis-server`
+- Update **supervised** in */etc/redis/redis.conf* to `supervised systemd`
+- Invoke redis cli to confirm installation: `$ redis-cli`
+- Type **ping** and you should get back **pong**
 
 ## Useful links
 - [Digital ocean community tutorials](https://www.digitalocean.com/community/tags/ubuntu-18-04)
