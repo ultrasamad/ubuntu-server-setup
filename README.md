@@ -31,6 +31,7 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 - Add new user: `$ sudo adduser ultrasamad`. Replace *ultrasamad* with name of user
 - Create a copy **.ssh** directory for the new user: `$ rsync --archive --chown=root:root ~/.ssh /home/ultrasamad`
 - Grant administrative privileges to user: `$ usermod -aG sudo ultrasamad`
+- Disable root login by setting `PermitRootLogin no` directive in `/etc/ssh/sshd_config` and restart SSH process with `sudo systemctl restart sshd`
 ***
 ## Configure Firewall rules
 - Enable firewall: `sudo ufw enable`
