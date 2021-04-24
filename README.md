@@ -72,7 +72,8 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 
 ## Install Composer
 - `$ cd ~ && sudo curl -sS https://getcomposer.org/installer | sudo php`
-- Add installation to path: `$ sudo ln -s /usr/local/bin/composer /suer/bin/composer`
+- Move executable: `$ sudo mv composer.phar /usr/local/bin/composer`
+- Add installation to path: `$ sudo ln -s /usr/local/bin/composer /usr/bin/composer`
 - Confirm installation with: `$ composer --version`
 
 ## Install PHP
