@@ -19,8 +19,8 @@ This guide is tested on Ubuntu server v18
 - [Allow remote access to MySQL](#allow-remote-access-to-mysql)
 - [Install Redis](#install-redis)
 - [Install Nodejs](#install-nodejs)
-- [Useful links](#useful-links)
 - [Laravel](#laravel)
+- [Useful links](#useful-links)
 ***
 
 ## Authentication and Users
