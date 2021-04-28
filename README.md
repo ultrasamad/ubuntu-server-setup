@@ -1,5 +1,5 @@
 # Ubuntu server setup
-A set of cheatsheets intended to get you up and running with a fresh Ubuntu server to a production ready server.
+A set of cheatsheets I use anytime I have to provision a fresh Ubuntu server.
 We wil go over the initial server setup, install nginx, PHP, PostgreSQL, PostGIS, MySQL, Redis, Nodejs etc. and configure our server to able to deploy a Laravel and Nodejs applications.
 
 This guide is tested on Ubuntu server v18
@@ -20,6 +20,7 @@ This guide is tested on Ubuntu server v18
 - [Install Redis](#install-redis)
 - [Install Nodejs](#install-nodejs)
 - [Useful links](#useful-links)
+- [Laravel](#laravel)
 ***
 
 ## Authentication and Users
@@ -161,6 +162,13 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
 - Update **supervised** in */etc/redis/redis.conf* to `supervised systemd`
 - Invoke redis cli to confirm installation: `$ redis-cli`
 - Type **ping** and you should get back **pong**
+
+## Laravel
+You need to make the storage and bootstrap directory writeable\
+- Change permission `$ chmod -R 775 storage bootstrap/cache`
+- Change ownership of storage and cache directory `$ chmod -R $USER:www-data storage bootstrap/cache`
+- Check webserver user group (apache) `ps aux | egrep '(apache|httpd)'`
+- Check webserver user group (nginx) `ps aux|grep nginx|grep -v grep`
 
 ## Useful links
 - [Digital ocean community tutorials](https://www.digitalocean.com/community/tags/ubuntu-18-04)
