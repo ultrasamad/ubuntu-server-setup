@@ -141,6 +141,7 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
  `# UPDATE mysql.user SET authentication_string = PASSWORD('password') WHERE user = 'root';`
  - Flush privileges: `# FLUSH PRIVILEGES;`
  - Create new user: `# CREATE USER 'ultrasamad'@'localhost' IDENTIFIED BY 'password';`
+ - Grant privileges to user: `# GRANT ALL PRIVILEGES ON dbname.* TO 'user'@'localhost';`
 
 
  ## Allow remote access to MySQL
