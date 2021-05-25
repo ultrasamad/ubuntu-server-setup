@@ -166,7 +166,7 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
 ## Laravel
 You need to make the storage and bootstrap directory writeable\
 - Change permission `$ chmod -R 775 storage bootstrap/cache`
-- Change ownership of storage and cache directory `$ chmod -R $USER:www-data storage bootstrap/cache`
+- Change ownership of storage and cache directory `$ chown -R $USER:www-data storage bootstrap/cache`
 - Check webserver user group (apache) `ps aux | egrep '(apache|httpd)'`
 - Check webserver user group (nginx) `ps aux|grep nginx|grep -v grep`
 
