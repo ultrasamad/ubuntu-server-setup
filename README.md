@@ -30,7 +30,7 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 - Generate ssh keys with: `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 - Login with default user (Digital ocean): `$ ssh root@server_ip`
 - Add new user: `$ sudo adduser ultrasamad`. Replace *ultrasamad* with name of user
-- Create a copy **.ssh** directory for the new user: `$ rsync --archive --chown=root:root ~/.ssh /home/ultrasamad`
+- Create a copy **.ssh** directory for the new user: `$ rsync --archive --chown=ultrasamad:ultrasamad ~/.ssh /home/ultrasamad`
 - Grant administrative privileges to user: `$ usermod -aG sudo ultrasamad`
 - Disable root login by setting `PermitRootLogin no` directive in `/etc/ssh/sshd_config` and restart SSH process with `sudo systemctl restart sshd`
 ***
