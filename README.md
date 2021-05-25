@@ -83,7 +83,7 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 - Check the version of **PHP** available: `$ sudo apt-cache show php`
 - Install **PHP** and all necessary packages: \
 ```
-$ sudo apt install libapache2-mod-php php7.4-fpm php7.4-common php7.4-intl php7.4-mysql php7.4-pgsql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-soap php7.4-zip php7.4-bcmath zip unzip -y
+$ sudo apt install libapache2-mod-php php-mysql php7.4-fpm php7.4-common php7.4-intl php7.4-mysql php7.4-pgsql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-soap php7.4-zip php7.4-bcmath zip unzip -y
 ```
 - Check **PHP** version: `$ php --version`
 - Check status of *php7.4-fpm*: `$ sudo service php7.4-fpm status`
