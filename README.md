@@ -1,5 +1,5 @@
 # Ubuntu server setup
-A set of cheatsheets I use anytime I have to provision a fresh Ubuntu server.
+Anytime I'm to provision a fresh Ubuntu server I find myself Googling the same things all over. So I put together this guide as a reference.
 We wil go over the initial server setup, install nginx, PHP, PostgreSQL, PostGIS, MySQL, Redis, Nodejs etc. and configure our server to able to deploy a Laravel and Nodejs applications.
 
 This guide is tested on Ubuntu server v18
@@ -8,6 +8,7 @@ This guide is tested on Ubuntu server v18
 - [Autentication and Users](#authentication-and-users)
 - [Configure firewall rules](#configure-firewall-rules)
 - [Install Nginx](#install-nginx)
+- [Install Apache](#install-apache)
 - [Setup Nginx server blocks](#setup-nginx-server-blocks)
 - [SSL Certificates with Letsencrypt](#ssl-certificates-with-letsencrypt)
 - [Install Composer](#install-composer)
@@ -47,7 +48,7 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 - Verify rule was added: `$ sudo ufw status`
 - Restart Nginx: `$ sudo service nginx restart`
 
-## Setup Nginx server blocks
+### Setup Nginx server blocks
 - Create new directory for your site: `$ sudo mkdir -p /var/www/example.com`
 - Give directory ownership to current user: `$ sudo chown -R $USER:$USER /var/ww/example.com`
 - Chage permissions of web root: `$ sudo chmod 755 -R /var/www` 
@@ -59,6 +60,19 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 - Verify syntax of Nginx configurations: `$ sudo nginx -t`
 - Restart Nginx: `$ sudo service nginx restart`
 - Vist your new site at example.com or www.example.com
+***
+## Install Apache
+Incase you choose to go with apache instead of nginx, these are the steps.
+- Installation: 
+```
+ $ sudo apt update
+ $ sudo apt install apache2
+```
+ - Enable firewall rules: `sudo ufw allow in "Apache"` or `sudo ufw allow in "Apache Full"`
+ - Verify status: `sudo ufw status`
+ - Enable site: `$ sudo a2ensite example.com`
+ - Check Syntax of conf file: `sudo apache2ctl configtest`
+ - Reload apache: `sudo systemctl reload apache2`
 ***
 
 ## SSL Certificates with Letsencrypt
