@@ -76,8 +76,7 @@ Incase you choose to go with apache instead of nginx, these are the steps.
 ***
 
 ## SSL Certificates with Letsencrypt
-- Add certbot repository: `$ sudo add-apt-repository ppa:certbot/certbot`
-- Install certbot: `$ sudo apt install python-certbot-ngix`
+- Install certbot: `$ sudo apt install certbot python3-certbot-nginx`
 - Verify the server_name is set to your owned domain in the **/etc/ngix/sites-available/example.com** file
 - Make sure firewall rules for http & https is allowed
 - Obtain SSL Certificate for your domain: `$ sudo certbot --ngix -d example.com -d www.example.com`. Add any other subdomains you will like to enable ssl for.
