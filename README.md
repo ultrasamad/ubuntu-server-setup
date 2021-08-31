@@ -29,7 +29,7 @@ This section shows how to connect to a server for the first time.
 Before logging onto the server, generate **ssh** keys on your local machine if yo haven't already.
 
 - Generate ssh keys with: `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-- Login with default user (Digital ocean): `$ ssh root@server_ip`
+- Login with default user: `$ ssh root@server_ip`
 - Add new user: `$ sudo adduser ultrasamad`. Replace *ultrasamad* with name of user
 - Create a copy **.ssh** directory for the new user: `$ rsync --archive --chown=ultrasamad:ultrasamad ~/.ssh /home/ultrasamad`
 - Grant administrative privileges to user: `$ usermod -aG sudo ultrasamad`
@@ -44,7 +44,7 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 ## Install Nginx
 - Update packages repositories: `$ sudo apt update`
 - Install Nginx: `$ sudo apt install nginx`
-- Allow Firewall rules for **http** & **https**: `$ sudo ufw allow Nginx Full`
+- Allow Firewall rules for **http** & **https**: `$ sudo ufw allow 'Nginx Full'`
 - Verify rule was added: `$ sudo ufw status`
 - Restart Nginx: `$ sudo service nginx restart`
 
