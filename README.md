@@ -79,9 +79,9 @@ Incase you choose to go with apache instead of nginx, these are the steps.
 - Install certbot: `$ sudo apt install certbot python3-certbot-nginx`
 - Verify the server_name is set to your owned domain in the **/etc/ngix/sites-available/example.com** file
 - Make sure firewall rules for http & https is allowed
-- Obtain SSL Certificate for your domain: `$ sudo certbot --ngix -d example.com -d www.example.com`. Add any other subdomains you will like to enable ssl for.
+- Obtain SSL Certificate for your domain: `$ sudo certbot --nginx -d example.com -d www.example.com`. Add any other subdomains you will like to enable ssl for.
 - Verify certbot auto renewal: `$ sudo certbot renew --dry-run`
-- Adding new subdomains: `$ sudo certbot certbotonly --ngix -d blog.example.com, projects.example.com`
+- Adding new subdomains: `$ sudo certbot certbotonly --nginx -d blog.example.com, projects.example.com`
 ***
 
 ## Install Composer
