@@ -97,7 +97,7 @@ Before doing anything check to make sure you have `listen 80` directive in your 
 - Check the version of **PHP** available: `$ sudo apt-cache show php`
 - Install **PHP** and all necessary packages: \
 ```
-$ sudo apt install libapache2-mod-php php-mysql php8.0-fpm php7.4-common php8.0-intl php7.4-mysql php7.4-pgsql php8.0-xml php7.4-xmlrpc php8.0-curl php8.0-gd php7.4-imagick php8.0-cli php8.0-dev php7.4-imap php8.0-mbstring php7.4-soap php7.4-zip php7.4-bcmath zip unzip -y
+$ sudo apt install libapache2-mod-php php8.0-fpm php8.0-common php8.0-intl php8.0-mysql php8.0-pgsql php8.0-xml php8.0-xmlrpc php8.0-curl php8.0-gd php8.0-imagick php8.0-cli php8.0-dev php8.0-imap php8.0-mbstring php8.0-soap php8.0-zip php8.0-bcmath zip unzip -y
 ```
 - Check **PHP** version: `$ php --version`
 - Check status of *php7.4-fpm*: `$ sudo service php7.4-fpm status`
