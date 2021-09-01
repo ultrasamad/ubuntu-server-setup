@@ -92,7 +92,7 @@ Before doing anything check to make sure you have `listen 80` directive in your 
 - Confirm installation with: `$ composer --version`
 
 ## Install PHP
-- Add a repository for latest **PHP** version: `$ sudo add-apt-repository ppa:ondrej/php`
+- Add a repository for latest **PHP** version: `$ sudo add-apt-repository ppa:ondrej/php` or `ppa:ondrej/apache2` for apache2
 - Update repo packages list: `$ sudo apt update`
 - Check the version of **PHP** available: `$ sudo apt-cache show php`
 - Install **PHP** and all necessary packages: \
