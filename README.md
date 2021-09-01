@@ -76,6 +76,7 @@ Incase you choose to go with apache instead of nginx, these are the steps.
 ***
 
 ## SSL Certificates with Letsencrypt
+Before doing anything check to make sure you have `listen 80` directive in your Nginx config file \
 - Install certbot: `$ sudo apt install certbot python3-certbot-nginx`
 - Verify the server_name is set to your owned domain in the **/etc/ngix/sites-available/example.com** file
 - Make sure firewall rules for http & https is allowed
