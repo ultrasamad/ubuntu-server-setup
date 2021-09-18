@@ -169,6 +169,8 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
 - Install nodejs: `$ sudo apt install nodejs`
 - Verify installation: `$ node --version`
 - Install PM2: `$ sudo npm install pm2@latest -g`
+- Start pm2 process: `pm2 start app.js --name myapp --watch`
+- Save pm2 process to auto run after restart: `pm2 save`
 
 
 ## Install Redis
