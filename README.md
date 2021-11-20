@@ -76,12 +76,16 @@ Incase you choose to go with apache instead of nginx, these are the steps.
 ***
 
 ## SSL Certificates with Letsencrypt
-Before doing anything check to make sure you have `listen 80` directive in your Nginx config file \
+Before doing anything check to make sure you have `listen 80` directive in your Nginx config file
 - Install certbot: `$ sudo apt install certbot python3-certbot-nginx`
 - Verify the server_name is set to your owned domain in the **/etc/ngix/sites-available/example.com** file
 - Make sure firewall rules for http & https is allowed
 - Obtain SSL Certificate for your domain: `$ sudo certbot --nginx -d example.com -d www.example.com`. Add any other subdomains you will like to enable ssl for.
 - Verify certbot auto renewal: `$ sudo certbot renew --dry-run`
+  If auto renew is not working, you can manually set a `cron` job.
+  * Open crontab file: `$ crontab -e`
+  * Add the cronjob command to run daily: `0 12 * * * /usr/bin/certbot renew --quiet`\
+   The above command will run every day at noon
 - Adding new subdomains: `$ sudo certbot certbotonly --nginx -d blog.example.com, projects.example.com`
 ***
 
