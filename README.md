@@ -185,11 +185,12 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
 - Type **ping** and you should get back **pong**
 
 ## Laravel
-You need to make the storage and bootstrap directory writeable\
-- Change permission `$ chmod -R 775 storage bootstrap/cache`
-- Change ownership of storage and cache directory `$ chown -R $USER:www-data storage bootstrap/cache`
-- Check webserver user group (apache) `ps aux | egrep '(apache|httpd)'`
-- Check webserver user group (nginx) `ps aux|grep nginx|grep -v grep`
+- Change ownership of www directory: `$ chown -R $USER:$USER`
+- Create project directory: `$ mkdir /var/www/example.com`
+- Change ownership of storage and cache directory: `$ chown -R $USER:www-data storage bootstrap/cache`
+- Change permission of storage and cache directories: `$ chmod -R 775 storage bootstrap/cache`
+- How to check apache webserver user group: `$ ps aux | egrep '(apache|httpd)'`
+- How to check nginx webserver user group: `$ ps aux|grep nginx|grep -v grep`
 
 ## Useful links
 - [Digital ocean community tutorials](https://www.digitalocean.com/community/tags/ubuntu-18-04)
