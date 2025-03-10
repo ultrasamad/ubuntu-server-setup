@@ -101,14 +101,14 @@ Before doing anything check to make sure you have `listen 80` directive in your 
 - Check the version of **PHP** available: `$ sudo apt-cache show php`
 - Install **PHP** and all necessary packages: \
 ```
-$ sudo apt install libapache2-mod-php php8.0-fpm php8.0-common php8.0-intl php8.0-mysql php8.0-pgsql php8.0-xml php8.0-xmlrpc php8.0-curl php8.0-gd php8.0-imagick php8.0-cli php8.0-dev php8.0-imap php8.0-mbstring php8.0-soap php8.0-zip php8.0-bcmath zip unzip -y
+$ sudo apt install libapache2-mod-php php8.4-fpm php8.4-common php8.4-intl php8.4-sqlite3 php8.4-mysql php8.4-pgsql php8.4-xml php8.4-xmlrpc php8.4-curl php8.4-gd php8.4-imagick php8.4-cli php8.4-dev php8.4-imap php8.4-mbstring php8.4-soap php8.4-zip php8.4-bcmath zip unzip -y
 ```
 - Check **PHP** version: `$ php --version`
-- Check status of *php7.4-fpm*: `$ sudo service php7.4-fpm status`
-- Configure *php7.4-fpm* gateway. \
-Add `fastcgi_pass unix:/run/php/php7.4-fpm.sock;` to the location server block in `/etc/ngix/sites-available/example.com`
+- Check status of *php8.4-fpm*: `$ sudo service php8.4-fpm status`
+- Configure *php8.4-fpm* gateway. \
+Add `fastcgi_pass unix:/run/php/php8.4-fpm.sock;` to the location server block in `/etc/ngix/sites-available/example.com`
 - Reload Nginx: `$ sudo service nginx reload`
-- Restart *php7.4-fpm*: `$ sudo service php7.4-fpm restart`
+- Restart *php8.4-fpm*: `$ sudo service php8.4-fpm restart`
 
 ## Install and Configure PostgreSQL
 - Remove any old installation: `$ sudo apt remove postgresql && sudo apt-get --purge remove postgresql\*`
@@ -122,7 +122,7 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
  $ sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
  ```
  - Update repository package list: `$ sudo apt update`
- - Install PostSQL: `$ sudo apt install postgresql-12`
+ - Install PostSQL: `$ sudo apt install postgresql-14`
  - Check port of postgres installation: `$ sudo netstat -plunt | grep postgres`
  - Confirm installation: `$ sudo psql --version`
  - Login with default user: `$ sudo -u postgres psql`
@@ -139,7 +139,7 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
  - Restart PostgreSQL: `$ sudo service postgresql restart`
 
  ## Install and enable PostGIS
- - Install: `$ sudo apt install postgis postgresql-12-postgis-3`
+ - Install: `$ sudo apt install postgis postgresql-14-postgis-3`
  - Enable PostGIS on current database: `# CREATE EXTENSION postgis;`
  - Verify PostGIS installation: `# SELECT Postgis_Version();` 
  ***
@@ -187,10 +187,10 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
 ## Laravel
 - Change ownership of www directory: `$ chown -R $USER:$USER`
 - Create project directory: `$ mkdir /var/www/example.com`
-- Change ownership of storage and cache directory: `$ chown -R $USER:www-data storage bootstrap/cache`
+- Change ownership of storage and cache directory to webserver: `$ chown -R $USER:www-data storage bootstrap/cache`
+  - How to check apache webserver user group: `$ ps aux | egrep '(apache|httpd)'`
+  - How to check nginx webserver user group: `$ ps aux|grep nginx|grep -v grep`
 - Change permission of storage and cache directories: `$ chmod -R 775 storage bootstrap/cache`
-- How to check apache webserver user group: `$ ps aux | egrep '(apache|httpd)'`
-- How to check nginx webserver user group: `$ ps aux|grep nginx|grep -v grep`
 
 ## Useful links
 - [Digital ocean community tutorials](https://www.digitalocean.com/community/tags/ubuntu-18-04)
