@@ -185,7 +185,7 @@ $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -c
 - Type **ping** and you should get back **pong**
 
 ## Laravel
-- Change ownership of www directory: `$ chown -R $USER:$USER`
+- Change ownership of www directory: `$ chown -R $USER:$USER /var/www`
 - Create project directory: `$ mkdir /var/www/example.com`
 - Change ownership of storage and cache directory to webserver: `$ chown -R $USER:www-data storage bootstrap/cache`
   - How to check apache webserver user group: `$ ps aux | egrep '(apache|httpd)'`
