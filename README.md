@@ -36,8 +36,8 @@ Before logging onto the server, generate **ssh** keys on your local machine if y
 - Disable root login by setting `PermitRootLogin no` directive in `/etc/ssh/sshd_config` and restart SSH process with `sudo systemctl restart sshd`
 ***
 ## Configure Firewall rules
-- Enable firewall: `sudo ufw enable`
 - Allow ssh connection: `$ sudo ufw allow openSSH`
+- Enable firewall: `sudo ufw enable`
 - Check status: `$ sudo ufw status`
 - View list of registered applications: `$ sudo ufw app list`
 ***
