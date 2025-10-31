@@ -101,7 +101,7 @@ Before doing anything check to make sure you have `listen 80` directive in your 
 - Check the version of **PHP** available: `$ sudo apt-cache show php`
 - Install **PHP** and all necessary packages: \
 ```
-$ sudo apt install libapache2-mod-php php8.4-fpm php8.4-common php8.4-intl php8.4-sqlite3 php8.4-mysql php8.4-pgsql php8.4-xml php8.4-xmlrpc php8.4-curl php8.4-gd php8.4-imagick php8.4-cli php8.4-dev php8.4-imap php8.4-mbstring php8.4-soap php8.4-zip php8.4-bcmath zip unzip -y
+$ sudo apt install php8.4-fpm php8.4-common php8.4-intl php8.4-sqlite3 php8.4-mysql php8.4-pgsql php8.4-xml php8.4-xmlrpc php8.4-curl php8.4-gd php8.4-imagick php8.4-cli php8.4-dev php8.4-imap php8.4-mbstring php8.4-soap php8.4-zip php8.4-bcmath zip unzip -y
 ```
 - Check **PHP** version: `$ php --version`
 - Check status of *php8.4-fpm*: `$ sudo service php8.4-fpm status`
